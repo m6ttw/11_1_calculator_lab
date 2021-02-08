@@ -11,9 +11,13 @@ public class Printer {
     }
 
     public void print(int numCopies, int numPages){
-        if (this.numberOfSheets >= (numCopies * numPages) && (this.tonerVolume >= (numCopies * numPages))){
+        if (this.numberOfSheets >= (numCopies * numPages)){
             this.numberOfSheets = this.numberOfSheets - (numCopies * numPages);
+        }
+        if (this.tonerVolume - (numCopies * numPages) >= 0){
             this.tonerVolume = this.tonerVolume - (numCopies * numPages);
+        } else {
+            this.tonerVolume = 0;
         }
     }
 }

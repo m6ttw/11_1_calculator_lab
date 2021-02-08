@@ -33,4 +33,11 @@ public class PrinterTest {
         printer.print(8, 12);
         assertEquals(904, printer.tonerVolume);
     }
+
+    @Test
+    public void printingMoreThanVolumeLeavesZero(){
+        Printer newPrinter = new Printer(100, 20);
+        newPrinter.print(8, 12);
+        assertEquals(0, newPrinter.tonerVolume);
+    }
 }
